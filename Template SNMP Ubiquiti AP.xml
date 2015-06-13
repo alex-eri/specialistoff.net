@@ -1,8 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <zabbix_export>
     <version>2.0</version>
-    <date>2015-06-13T00:07:38Z</date>
+    <date>2015-06-13T00:08:04Z</date>
     <groups>
+        <group>
+            <name>AP</name>
+        </group>
         <group>
             <name>SNMP</name>
         </group>
@@ -12,16 +15,16 @@
         <group>
             <name>Ubiquiti</name>
         </group>
-        <group>
-            <name>Станция</name>
-        </group>
     </groups>
     <templates>
         <template>
-            <template>Template SNMP Ubiquiti Station</template>
-            <name>Шаблон SNMP Ubiquiti станция</name>
+            <template>Template SNMP Ubiquiti AP</template>
+            <name>Шаблон SNMP Ubiquiti AP</name>
             <description/>
             <groups>
+                <group>
+                    <name>AP</name>
+                </group>
                 <group>
                     <name>SNMP</name>
                 </group>
@@ -30,9 +33,6 @@
                 </group>
                 <group>
                     <name>Ubiquiti</name>
-                </group>
-                <group>
-                    <name>Станция</name>
                 </group>
             </groups>
             <applications>
@@ -50,9 +50,6 @@
                 </application>
                 <application>
                     <name>Производительность</name>
-                </application>
-                <application>
-                    <name>Радиоканал</name>
                 </application>
             </applications>
             <items>
@@ -104,9 +101,9 @@
                     <type>1</type>
                     <snmp_community>{$SNMP_COMMUNITY}</snmp_community>
                     <multiplier>1</multiplier>
-                    <snmp_oid>SNMPv2-SMI::enterprises.10002.1.1.1.1.1.0</snmp_oid>
-                    <key>enterprises.10002.1.1.1.1.1.0</key>
-                    <delay>60</delay>
+                    <snmp_oid>HOST-RESOURCES-MIB::hrStorageSize.65536</snmp_oid>
+                    <key>hrStorageSize.65536</key>
+                    <delay>30</delay>
                     <history>90</history>
                     <trends>365</trends>
                     <status>0</status>
@@ -150,9 +147,9 @@
                     <type>1</type>
                     <snmp_community>{$SNMP_COMMUNITY}</snmp_community>
                     <multiplier>0</multiplier>
-                    <snmp_oid>SNMPv2-SMI::enterprises.10002.1.1.1.4.2.1.3.1</snmp_oid>
-                    <key>enterprises.10002.1.1.1.4.2.1.3.1</key>
-                    <delay>60</delay>
+                    <snmp_oid>HOST-RESOURCES-MIB::hrProcessorLoad.1</snmp_oid>
+                    <key>hrProcessorLoad.1</key>
+                    <delay>30</delay>
                     <history>90</history>
                     <trends>365</trends>
                     <status>0</status>
@@ -235,99 +232,13 @@
                     <logtimefmt/>
                 </item>
                 <item>
-                    <name>Модель</name>
-                    <type>1</type>
-                    <snmp_community>{$SNMP_COMMUNITY}</snmp_community>
-                    <multiplier>0</multiplier>
-                    <snmp_oid>SNMPv2-MIB::sysDescr.0</snmp_oid>
-                    <key>sysDescr.0</key>
-                    <delay>3600</delay>
-                    <history>90</history>
-                    <trends>365</trends>
-                    <status>0</status>
-                    <value_type>1</value_type>
-                    <allowed_hosts/>
-                    <units/>
-                    <delta>0</delta>
-                    <snmpv3_contextname/>
-                    <snmpv3_securityname/>
-                    <snmpv3_securitylevel>0</snmpv3_securitylevel>
-                    <snmpv3_authprotocol>0</snmpv3_authprotocol>
-                    <snmpv3_authpassphrase/>
-                    <snmpv3_privprotocol>0</snmpv3_privprotocol>
-                    <snmpv3_privpassphrase/>
-                    <formula>1</formula>
-                    <delay_flex/>
-                    <params/>
-                    <ipmi_sensor/>
-                    <data_type>0</data_type>
-                    <authtype>0</authtype>
-                    <username/>
-                    <password/>
-                    <publickey/>
-                    <privatekey/>
-                    <port/>
-                    <description/>
-                    <inventory_link>0</inventory_link>
-                    <applications>
-                        <application>
-                            <name>Общие</name>
-                        </application>
-                    </applications>
-                    <valuemap/>
-                    <logtimefmt/>
-                </item>
-                <item>
-                    <name>Рабочая частота</name>
-                    <type>1</type>
-                    <snmp_community>{$SNMP_COMMUNITY}</snmp_community>
-                    <multiplier>0</multiplier>
-                    <snmp_oid>SNMPv2-SMI::enterprises.14988.1.1.1.1.1.7.5</snmp_oid>
-                    <key>enterprises.14988.1.1.1.1.1.7.5</key>
-                    <delay>60</delay>
-                    <history>90</history>
-                    <trends>365</trends>
-                    <status>0</status>
-                    <value_type>3</value_type>
-                    <allowed_hosts/>
-                    <units/>
-                    <delta>0</delta>
-                    <snmpv3_contextname/>
-                    <snmpv3_securityname/>
-                    <snmpv3_securitylevel>0</snmpv3_securitylevel>
-                    <snmpv3_authprotocol>0</snmpv3_authprotocol>
-                    <snmpv3_authpassphrase/>
-                    <snmpv3_privprotocol>0</snmpv3_privprotocol>
-                    <snmpv3_privpassphrase/>
-                    <formula>1</formula>
-                    <delay_flex/>
-                    <params/>
-                    <ipmi_sensor/>
-                    <data_type>0</data_type>
-                    <authtype>0</authtype>
-                    <username/>
-                    <password/>
-                    <publickey/>
-                    <privatekey/>
-                    <port/>
-                    <description/>
-                    <inventory_link>0</inventory_link>
-                    <applications>
-                        <application>
-                            <name>Радиоканал</name>
-                        </application>
-                    </applications>
-                    <valuemap/>
-                    <logtimefmt/>
-                </item>
-                <item>
-                    <name>Свободно ОЗУ</name>
+                    <name>Использование ОЗУ</name>
                     <type>1</type>
                     <snmp_community>{$SNMP_COMMUNITY}</snmp_community>
                     <multiplier>1</multiplier>
-                    <snmp_oid>SNMPv2-SMI::enterprises.10002.1.1.1.1.2.0</snmp_oid>
-                    <key>enterprises.10002.1.1.1.1.2.0</key>
-                    <delay>60</delay>
+                    <snmp_oid>HOST-RESOURCES-MIB::hrStorageUsed.65536</snmp_oid>
+                    <key>hrStorageUsed.65536</key>
+                    <delay>30</delay>
                     <history>90</history>
                     <trends>365</trends>
                     <status>0</status>
@@ -367,60 +278,17 @@
                     <logtimefmt/>
                 </item>
                 <item>
-                    <name>Сигнал</name>
+                    <name>Модель</name>
                     <type>1</type>
                     <snmp_community>{$SNMP_COMMUNITY}</snmp_community>
                     <multiplier>0</multiplier>
-                    <snmp_oid>SNMPv2-SMI::enterprises.14988.1.1.1.1.1.4.5</snmp_oid>
-                    <key>enterprises.14988.1.1.1.1.1.4.5</key>
-                    <delay>60</delay>
+                    <snmp_oid>SNMPv2-MIB::sysDescr.0</snmp_oid>
+                    <key>sysDescr.0</key>
+                    <delay>3600</delay>
                     <history>90</history>
                     <trends>365</trends>
                     <status>0</status>
-                    <value_type>0</value_type>
-                    <allowed_hosts/>
-                    <units>дБм</units>
-                    <delta>0</delta>
-                    <snmpv3_contextname/>
-                    <snmpv3_securityname/>
-                    <snmpv3_securitylevel>0</snmpv3_securitylevel>
-                    <snmpv3_authprotocol>0</snmpv3_authprotocol>
-                    <snmpv3_authpassphrase/>
-                    <snmpv3_privprotocol>0</snmpv3_privprotocol>
-                    <snmpv3_privpassphrase/>
-                    <formula>1</formula>
-                    <delay_flex/>
-                    <params/>
-                    <ipmi_sensor/>
-                    <data_type>0</data_type>
-                    <authtype>0</authtype>
-                    <username/>
-                    <password/>
-                    <publickey/>
-                    <privatekey/>
-                    <port/>
-                    <description/>
-                    <inventory_link>0</inventory_link>
-                    <applications>
-                        <application>
-                            <name>Радиоканал</name>
-                        </application>
-                    </applications>
-                    <valuemap/>
-                    <logtimefmt/>
-                </item>
-                <item>
-                    <name>Скорость передачи данных</name>
-                    <type>1</type>
-                    <snmp_community>{$SNMP_COMMUNITY}</snmp_community>
-                    <multiplier>0</multiplier>
-                    <snmp_oid>SNMPv2-SMI::enterprises.14988.1.1.1.1.1.2.5</snmp_oid>
-                    <key>enterprises.14988.1.1.1.1.1.2.5</key>
-                    <delay>60</delay>
-                    <history>90</history>
-                    <trends>365</trends>
-                    <status>0</status>
-                    <value_type>3</value_type>
+                    <value_type>1</value_type>
                     <allowed_hosts/>
                     <units/>
                     <delta>0</delta>
@@ -446,142 +314,7 @@
                     <inventory_link>0</inventory_link>
                     <applications>
                         <application>
-                            <name>Радиоканал</name>
-                        </application>
-                    </applications>
-                    <valuemap/>
-                    <logtimefmt/>
-                </item>
-                <item>
-                    <name>Скорость получения данных</name>
-                    <type>1</type>
-                    <snmp_community>{$SNMP_COMMUNITY}</snmp_community>
-                    <multiplier>0</multiplier>
-                    <snmp_oid>SNMPv2-SMI::enterprises.14988.1.1.1.1.1.3.5</snmp_oid>
-                    <key>enterprises.14988.1.1.1.1.1.3.5</key>
-                    <delay>60</delay>
-                    <history>90</history>
-                    <trends>365</trends>
-                    <status>0</status>
-                    <value_type>3</value_type>
-                    <allowed_hosts/>
-                    <units/>
-                    <delta>0</delta>
-                    <snmpv3_contextname/>
-                    <snmpv3_securityname/>
-                    <snmpv3_securitylevel>0</snmpv3_securitylevel>
-                    <snmpv3_authprotocol>0</snmpv3_authprotocol>
-                    <snmpv3_authpassphrase/>
-                    <snmpv3_privprotocol>0</snmpv3_privprotocol>
-                    <snmpv3_privpassphrase/>
-                    <formula>1</formula>
-                    <delay_flex/>
-                    <params/>
-                    <ipmi_sensor/>
-                    <data_type>0</data_type>
-                    <authtype>0</authtype>
-                    <username/>
-                    <password/>
-                    <publickey/>
-                    <privatekey/>
-                    <port/>
-                    <description/>
-                    <inventory_link>0</inventory_link>
-                    <applications>
-                        <application>
-                            <name>Радиоканал</name>
-                        </application>
-                    </applications>
-                    <valuemap/>
-                    <logtimefmt/>
-                </item>
-                <item>
-                    <name>Средняя нагрузка ЦПУ за 5 минут</name>
-                    <type>1</type>
-                    <snmp_community>{$SNMP_COMMUNITY}</snmp_community>
-                    <multiplier>0</multiplier>
-                    <snmp_oid>SNMPv2-SMI::enterprises.10002.1.1.1.4.2.1.3.2</snmp_oid>
-                    <key>enterprises.10002.1.1.1.4.2.1.3.2</key>
-                    <delay>60</delay>
-                    <history>90</history>
-                    <trends>365</trends>
-                    <status>0</status>
-                    <value_type>3</value_type>
-                    <allowed_hosts/>
-                    <units/>
-                    <delta>0</delta>
-                    <snmpv3_contextname/>
-                    <snmpv3_securityname/>
-                    <snmpv3_securitylevel>0</snmpv3_securitylevel>
-                    <snmpv3_authprotocol>0</snmpv3_authprotocol>
-                    <snmpv3_authpassphrase/>
-                    <snmpv3_privprotocol>0</snmpv3_privprotocol>
-                    <snmpv3_privpassphrase/>
-                    <formula>1</formula>
-                    <delay_flex/>
-                    <params/>
-                    <ipmi_sensor/>
-                    <data_type>0</data_type>
-                    <authtype>0</authtype>
-                    <username/>
-                    <password/>
-                    <publickey/>
-                    <privatekey/>
-                    <port/>
-                    <description/>
-                    <inventory_link>0</inventory_link>
-                    <applications>
-                        <application>
-                            <name>CPU</name>
-                        </application>
-                        <application>
-                            <name>Производительность</name>
-                        </application>
-                    </applications>
-                    <valuemap/>
-                    <logtimefmt/>
-                </item>
-                <item>
-                    <name>Средняя нагрузка ЦПУ за 15 минут</name>
-                    <type>1</type>
-                    <snmp_community>{$SNMP_COMMUNITY}</snmp_community>
-                    <multiplier>0</multiplier>
-                    <snmp_oid>SNMPv2-SMI::enterprises.10002.1.1.1.4.2.1.3.3</snmp_oid>
-                    <key>enterprises.10002.1.1.1.4.2.1.3.3</key>
-                    <delay>60</delay>
-                    <history>90</history>
-                    <trends>365</trends>
-                    <status>0</status>
-                    <value_type>3</value_type>
-                    <allowed_hosts/>
-                    <units/>
-                    <delta>0</delta>
-                    <snmpv3_contextname/>
-                    <snmpv3_securityname/>
-                    <snmpv3_securitylevel>0</snmpv3_securitylevel>
-                    <snmpv3_authprotocol>0</snmpv3_authprotocol>
-                    <snmpv3_authpassphrase/>
-                    <snmpv3_privprotocol>0</snmpv3_privprotocol>
-                    <snmpv3_privpassphrase/>
-                    <formula>1</formula>
-                    <delay_flex/>
-                    <params/>
-                    <ipmi_sensor/>
-                    <data_type>0</data_type>
-                    <authtype>0</authtype>
-                    <username/>
-                    <password/>
-                    <publickey/>
-                    <privatekey/>
-                    <port/>
-                    <description/>
-                    <inventory_link>0</inventory_link>
-                    <applications>
-                        <application>
-                            <name>CPU</name>
-                        </application>
-                        <application>
-                            <name>Производительность</name>
+                            <name>Общие</name>
                         </application>
                     </applications>
                     <valuemap/>
@@ -823,7 +556,7 @@
                                     <calc_fnc>2</calc_fnc>
                                     <type>0</type>
                                     <item>
-                                        <host>Template SNMP Ubiquiti Station</host>
+                                        <host>Template SNMP Ubiquiti AP</host>
                                         <key>ifInOctets[{#SNMPVALUE}]</key>
                                     </item>
                                 </graph_item>
@@ -835,7 +568,7 @@
                                     <calc_fnc>2</calc_fnc>
                                     <type>0</type>
                                     <item>
-                                        <host>Template SNMP Ubiquiti Station</host>
+                                        <host>Template SNMP Ubiquiti AP</host>
                                         <key>ifOutOctets[{#SNMPVALUE}]</key>
                                     </item>
                                 </graph_item>
@@ -908,38 +641,14 @@
             <graph_items>
                 <graph_item>
                     <sortorder>0</sortorder>
-                    <drawtype>0</drawtype>
-                    <color>00FF00</color>
+                    <drawtype>5</drawtype>
+                    <color>EE0000</color>
                     <yaxisside>0</yaxisside>
                     <calc_fnc>2</calc_fnc>
                     <type>0</type>
                     <item>
-                        <host>Template SNMP Ubiquiti Station</host>
-                        <key>enterprises.10002.1.1.1.4.2.1.3.1</key>
-                    </item>
-                </graph_item>
-                <graph_item>
-                    <sortorder>1</sortorder>
-                    <drawtype>0</drawtype>
-                    <color>0000FF</color>
-                    <yaxisside>0</yaxisside>
-                    <calc_fnc>2</calc_fnc>
-                    <type>0</type>
-                    <item>
-                        <host>Template SNMP Ubiquiti Station</host>
-                        <key>enterprises.10002.1.1.1.4.2.1.3.2</key>
-                    </item>
-                </graph_item>
-                <graph_item>
-                    <sortorder>2</sortorder>
-                    <drawtype>0</drawtype>
-                    <color>FF0000</color>
-                    <yaxisside>0</yaxisside>
-                    <calc_fnc>2</calc_fnc>
-                    <type>0</type>
-                    <item>
-                        <host>Template SNMP Ubiquiti Station</host>
-                        <key>enterprises.10002.1.1.1.4.2.1.3.3</key>
+                        <host>Template SNMP Ubiquiti AP</host>
+                        <key>hrProcessorLoad.1</key>
                     </item>
                 </graph_item>
             </graph_items>
@@ -970,8 +679,8 @@
                     <calc_fnc>2</calc_fnc>
                     <type>0</type>
                     <item>
-                        <host>Template SNMP Ubiquiti Station</host>
-                        <key>enterprises.10002.1.1.1.1.1.0</key>
+                        <host>Template SNMP Ubiquiti AP</host>
+                        <key>hrStorageSize.65536</key>
                     </item>
                 </graph_item>
                 <graph_item>
@@ -982,116 +691,8 @@
                     <calc_fnc>2</calc_fnc>
                     <type>0</type>
                     <item>
-                        <host>Template SNMP Ubiquiti Station</host>
-                        <key>enterprises.10002.1.1.1.1.2.0</key>
-                    </item>
-                </graph_item>
-            </graph_items>
-        </graph>
-        <graph>
-            <name>Рабочая частота</name>
-            <width>900</width>
-            <height>200</height>
-            <yaxismin>0.0000</yaxismin>
-            <yaxismax>100.0000</yaxismax>
-            <show_work_period>1</show_work_period>
-            <show_triggers>1</show_triggers>
-            <type>0</type>
-            <show_legend>1</show_legend>
-            <show_3d>0</show_3d>
-            <percent_left>0.0000</percent_left>
-            <percent_right>0.0000</percent_right>
-            <ymin_type_1>0</ymin_type_1>
-            <ymax_type_1>0</ymax_type_1>
-            <ymin_item_1>0</ymin_item_1>
-            <ymax_item_1>0</ymax_item_1>
-            <graph_items>
-                <graph_item>
-                    <sortorder>0</sortorder>
-                    <drawtype>0</drawtype>
-                    <color>0000FF</color>
-                    <yaxisside>0</yaxisside>
-                    <calc_fnc>2</calc_fnc>
-                    <type>0</type>
-                    <item>
-                        <host>Template SNMP Ubiquiti Station</host>
-                        <key>enterprises.14988.1.1.1.1.1.7.5</key>
-                    </item>
-                </graph_item>
-            </graph_items>
-        </graph>
-        <graph>
-            <name>Сигнал</name>
-            <width>900</width>
-            <height>200</height>
-            <yaxismin>0.0000</yaxismin>
-            <yaxismax>100.0000</yaxismax>
-            <show_work_period>1</show_work_period>
-            <show_triggers>1</show_triggers>
-            <type>0</type>
-            <show_legend>1</show_legend>
-            <show_3d>0</show_3d>
-            <percent_left>0.0000</percent_left>
-            <percent_right>0.0000</percent_right>
-            <ymin_type_1>0</ymin_type_1>
-            <ymax_type_1>0</ymax_type_1>
-            <ymin_item_1>0</ymin_item_1>
-            <ymax_item_1>0</ymax_item_1>
-            <graph_items>
-                <graph_item>
-                    <sortorder>0</sortorder>
-                    <drawtype>2</drawtype>
-                    <color>FF0000</color>
-                    <yaxisside>0</yaxisside>
-                    <calc_fnc>2</calc_fnc>
-                    <type>0</type>
-                    <item>
-                        <host>Template SNMP Ubiquiti Station</host>
-                        <key>enterprises.14988.1.1.1.1.1.4.5</key>
-                    </item>
-                </graph_item>
-            </graph_items>
-        </graph>
-        <graph>
-            <name>Скорость радиоканала</name>
-            <width>900</width>
-            <height>200</height>
-            <yaxismin>0.0000</yaxismin>
-            <yaxismax>100.0000</yaxismax>
-            <show_work_period>1</show_work_period>
-            <show_triggers>1</show_triggers>
-            <type>0</type>
-            <show_legend>1</show_legend>
-            <show_3d>0</show_3d>
-            <percent_left>0.0000</percent_left>
-            <percent_right>0.0000</percent_right>
-            <ymin_type_1>0</ymin_type_1>
-            <ymax_type_1>0</ymax_type_1>
-            <ymin_item_1>0</ymin_item_1>
-            <ymax_item_1>0</ymax_item_1>
-            <graph_items>
-                <graph_item>
-                    <sortorder>0</sortorder>
-                    <drawtype>0</drawtype>
-                    <color>00C800</color>
-                    <yaxisside>0</yaxisside>
-                    <calc_fnc>2</calc_fnc>
-                    <type>0</type>
-                    <item>
-                        <host>Template SNMP Ubiquiti Station</host>
-                        <key>enterprises.14988.1.1.1.1.1.2.5</key>
-                    </item>
-                </graph_item>
-                <graph_item>
-                    <sortorder>1</sortorder>
-                    <drawtype>0</drawtype>
-                    <color>0000C8</color>
-                    <yaxisside>0</yaxisside>
-                    <calc_fnc>2</calc_fnc>
-                    <type>0</type>
-                    <item>
-                        <host>Template SNMP Ubiquiti Station</host>
-                        <key>enterprises.14988.1.1.1.1.1.3.5</key>
+                        <host>Template SNMP Ubiquiti AP</host>
+                        <key>hrStorageUsed.65536</key>
                     </item>
                 </graph_item>
             </graph_items>
