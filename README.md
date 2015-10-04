@@ -1,2 +1,4 @@
-# specialistoff.net
+# Ссылки
 SpecialistOff.NET
+
+* http://wiki.specialistoff.net/
