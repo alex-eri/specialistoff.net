@@ -1,0 +1,32 @@
+--- init.orig	2015-10-12 00:08:31.634092100 +0300
++++ init	2015-10-12 02:21:57.952876234 +0300
+@@ -452,11 +452,6 @@
+ 		[ ! -e "${NEW_ROOT}/dev/$minor" ] && mknod -m 600 "${NEW_ROOT}/dev/tty$minor" c 4 $minor
+ 	done
+ 
+-	if [ "${REAL_ROOT}" != "/dev/nfs" ] && [ "${LOOPTYPE}" != "sgimips" ]
+-	then
+-		bootstrapCD
+-	fi
+-
+ 	if [ "${REAL_ROOT}" = '' ]
+ 	then
+ 		warn_msg "No bootable medium found. Waiting for new devices..."
+@@ -589,7 +584,7 @@
+ 		else
+ 			bad_msg "Block device ${REAL_ROOT} is not a valid root device..."
+ 			REAL_ROOT=""
+-			got_good_root=0
++			got_good_root=1
+ 		fi
+ 	done
+ 
+@@ -668,8 +663,6 @@
+ 	[ -z "${LOOP}" ] && find_loop
+ 	[ -z "${LOOPTYPE}" ] && find_looptype
+ 
+-	cache_cd_contents
+-
+ 	# If encrypted, find key and mount, otherwise mount as usual
+ 	if [ -n "${CRYPT_ROOT}" ]
+ 	then
