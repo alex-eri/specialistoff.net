@@ -1,4 +1,4 @@
 # Ссылки
-SpecialistOff.NET
+http://SpecialistOff.NET/
 
 * http://wiki.specialistoff.net/
